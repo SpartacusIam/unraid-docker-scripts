@@ -3,10 +3,10 @@
 #--DEFINE VARIABLES--#
 
 # Set Appdata Directory (must include trailing /)
-appdataDirectory='/mnt/cache/System/docker/'
+appdataDirectory='/DOCKER/PATH/docker/'
 
 # Set Backup Directory (must include trailing /)
-backupDirectory='/mnt/user/Backup/docker.img/'
+backupDirectory='/BACKUP/PATH/docker.img/'
 
 # Set Number of Days to Keep Backups 
 days=360
