@@ -2,7 +2,7 @@
 
 #--DEFINE VARIABLES--#
 
-# Set Appdata Directory (must include trailing /)
+# Set docker.img Directory (must include trailing /)
 appdataDirectory='/DOCKER/PATH/docker/'
 
 # Set Backup Directory (must include trailing /)
