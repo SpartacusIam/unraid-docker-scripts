@@ -13,10 +13,8 @@ days=365
 #--START SCRIPT--#
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's starting."
 
-docker stop plex
-cp -a "$plexdbDirectory"com.plexapp.plugins.library.db "$backupDirectory"com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db
-cp -a "$plexdbDirectory"com.plexapp.plugins.library.blobs.db "$backupDirectory"com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db
-docker start plex
+sqlite3 "$plexdbDirectory"com.plexapp.plugins.library.db ".backup ${backupDirectory}com.plexapp.plugins.library-$(date +'%Y-%m-%d@%H.%M').db"
+sqlite3 "$plexdbDirectory"com.plexapp.plugins.library.blobs.db ".backup ${backupDirectory}com.plexapp.plugins.library.blobs-$(date +'%Y-%m-%d@%H.%M').db"
 
 #Cleanup Old Backups
 find "$backupDirectory"* -type d -mtime +"$days" -exec rm -rf {} +
